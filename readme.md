@@ -1,6 +1,12 @@
 ## Eazy-Etl
 
-Simple functions to create a ETL pipeline.
+Simple functions to create ETL pipelines using the most popular python modules available for the job.
+
+This is supposed to be a framework. Simple scripts, just to get the job done.
+
+Any extra features should be build on top. There are already great modules for
+pretty much anything you need, there is no point in replacing them. This module
+is supposed to sit on the shoulder of giants not on their toes.
 
 Works with Python 3.
 
