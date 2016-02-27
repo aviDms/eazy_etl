@@ -91,9 +91,7 @@ Create the table if it does not exit.
     bt_euro_classic.create(script_path=create_table_script, drop_if_exists=False)
 
 
-The SQL script should have the
-following content, where the {schema} and {table} wildcards will be replaced by the parameters
-passed during Table()'s initialization.
+The SQL script should have the following content:
 
 
     ```sql
@@ -110,7 +108,7 @@ passed during Table()'s initialization.
 
 
 Having a primary key is good practice. The 'report_date' column is used to decide if the row
-must be appended to the table or updated. Hence it is mandatory that this column is part of
+must be appended to the table or updated. Hence, it is mandatory that this column is part of
 a unique constraint. It can also be set as the primary key in this case, but it will make a
 terrible primary key due the the fact that it is a date field.
 
