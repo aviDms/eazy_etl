@@ -95,6 +95,7 @@ The SQL script should have the
 following content, where the {schema} and {table} wildcards will be replaced by the parameters
 passed during Table()'s initialization.
 
+
     ```sql
     CREATE TABLE {schema}.{table} (
         id SERIAL NOT NULL,
@@ -106,6 +107,7 @@ passed during Table()'s initialization.
         CONSTRAINT unique_date UNIQUE (report_date)
     );
     ```
+
 
 Having a primary key is good practice. The 'report_date' column is used to decide if the row
 must be appended to the table or updated. Hence it is mandatory that this column is part of
