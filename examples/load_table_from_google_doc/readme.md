@@ -1,10 +1,12 @@
 ### From Google Doc to PostgreSQL
 
-Create a simple pipeline for loading data from a google doc to a postgresql database table.
+Create a simple pipeline for loading data from a Google Doc to a database table in PostgreSQL.
 
 Each ETL job must be a separate folder, containing Python and SQL scripts, as well as other
-details or configuration such as xml config files for Jenkins scheduler. This folder has 3
-file:
+details or configuration such as .xml config files for Jenkins scheduler.
+
+This folder has three files:
+
     * a Pyhton script used to run the ETL job
     * an SQL script used to create the target table
     * a readme file, serving as documentation
