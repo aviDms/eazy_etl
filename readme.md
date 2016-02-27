@@ -23,8 +23,9 @@ Works with Python 3.
 
 3. Install requirements form the requirements.txt file:
 
+    ```bash
     sudo pip install -r requirements.txt
-
+    ```
 
 That is pretty much it.
 
