@@ -75,22 +75,23 @@ Its __insert()__ method accepts
 a stream of key, value pairs and dynamically creates the INSERT statement necessary to load
 the data to PostgreSQL using the [psycopg2](http://initd.org/psycopg/docs/index.html) module.
 
-    ```python
+
+Initiate the Table object:
+
     bt_euro_classic = Table(name='bt_euro_classic', schema='public', dsn=local)
-    bt_euro_classic.create(script_path=create_table_script, drop_if_exists=False)
-    bt_euro_classic.insert(transform(extract(sheet)), conflict_on='report_date')
-    ```
-There are 3 steps defining the data pipeline:
 
-1. Initiate the Table object. The table does not have to be already created,
-it can be created later.
-
-* name: name of the table as string
-* schema: database schema, where the table is stored, as string
-* dsn: postgresql connection string (should not be stored in the script but rather imported
+* __name__: name of the table as string
+* __schema__: database schema, where the table is stored, as string
+* __dsn__: postgresql connection string (should not be stored in the script but rather imported
 from a location outside of the repository)
 
-2. Create the table if it does not exit, do nothing if it does. The SQL script should have the
+
+Create the table if it does not exit.
+
+    bt_euro_classic.create(script_path=create_table_script, drop_if_exists=False)
+
+
+The SQL script should have the
 following content, where the {schema} and {table} wildcards will be replaced by the parameters
 passed during Table()'s initialization.
 
@@ -111,6 +112,8 @@ must be appended to the table or updated. Hence it is mandatory that this column
 a unique constraint. It can also be set as the primary key in this case, but it will make a
 terrible primary key due the the fact that it is a date field.
 
-3. Extract, Transform, Load
+Extract, Transform, Load
+
+    bt_euro_classic.insert(transform(extract(sheet)), conflict_on='report_date')
 
 Last line of code in the the main function, is basically creating the ETL pipeline.
