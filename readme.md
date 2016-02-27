@@ -10,6 +10,7 @@ Works with Python 3.
 1. Download this module somewhere you can reffer to it (ex. /home/user/pylib/eazy_etl/)
 2. Add the folder to your python path, by appending .bashrc file:
 
+    ```bash
     # open .bashrc
     nano /home/user/.bashrc
 
@@ -18,7 +19,7 @@ Works with Python 3.
 
     # restart bash, just type bash in terminal
     # now you should be able to import eazy_etl in python
-
+    ```
 
 3. Install requirements form the requirements.txt file:
 
