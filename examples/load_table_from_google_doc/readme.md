@@ -51,10 +51,7 @@ first to create a stream of records and a second one to handle the cleanup steps
     def extract(sheet):
     for records in sheet.get_all_records(empty2zero=False, head=1):
         yield records
-    ```
 
-
-    ```python
     def transform(records):
     for row in records:
         new_row = dict()
@@ -72,8 +69,9 @@ first to create a stream of records and a second one to handle the cleanup steps
 
 ### The PostgreSQL Table
 
-Loading data to PostgreSQL is handled by the [Table]() object.
-Its .insert(https://github.com/aviDms/eazy_etl/blob/master/postgresql.py) method accepts
+Loading data to PostgreSQL is handled by the
+[Table](https://github.com/aviDms/eazy_etl/blob/master/postgresql.py) object.
+Its __insert()__ method accepts
 a stream of key, value pairs and dynamically creates the INSERT statement necessary to load
 the data to PostgreSQL using the [psycopg2](http://initd.org/psycopg/docs/index.html) module.
 
