@@ -7,9 +7,9 @@ details or configuration such as .xml config files for Jenkins scheduler.
 
 This folder has three files:
 
-    * a Pyhton script used to run the ETL job
-    * an SQL script used to create the target table
-    * a readme file, serving as documentation
+* a Pyhton script used to run the ETL job
+* an SQL script used to create the target table
+* a readme file, serving as documentation
 
 
 ##### The Google Doc
