@@ -26,21 +26,24 @@ Name: __BT Obligatiuni__ Sheet: __bteuroclasic__
 
 #### Extract data using [gspread](https://github.com/burnash/gspread)
 
-Simplest way to do this is by getting all records from the target spreadsheet:
+Simplest way to do this, is by getting all records from the target spreadsheet.
+
+
 
     ```python
-        gd = GoogleDoc.open('BT Obligatiuni')
-        sheet = gd.worksheet('bteuroclasic')
-        sheet.get_all_records(empty2zero=False, head=1)
+    gd = GoogleDoc.open('BT Obligatiuni')
+    sheet = gd.worksheet('bteuroclasic')
+    sheet.get_all_records(empty2zero=False, head=1)
     ```
+
 
 The first line in the spreadsheet is handled as the header. The rest of the lines are fetched
 as a list of key, value pairs: [{filed_name: cell_value}, ...]. This way it will be easier to
 automatically construct an INSERT statement for loading each row to postgres.
 
-    ```python
+
     [{'Ddate': '11/8/2010', 'Activ net': '1,499,538.47'}, {...}, ...]
-    ```
+
 
 Since data in google docs can be quite messy, there needs to be a clean up step. Also, data must
 be passed as a generator to the __Table.insert()__ method. Hence, two functions need to be defied,
