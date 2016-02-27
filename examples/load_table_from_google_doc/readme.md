@@ -29,7 +29,6 @@ Name: __BT Obligatiuni__ Sheet: __bteuroclasic__
 Simplest way to do this, is by getting all records from the target spreadsheet.
 
 
-
     ```python
     gd = GoogleDoc.open('BT Obligatiuni')
     sheet = gd.worksheet('bteuroclasic')
