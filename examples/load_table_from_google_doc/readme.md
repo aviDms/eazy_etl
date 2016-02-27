@@ -38,9 +38,7 @@ Simplest way to do this, is by getting all records from the target spreadsheet.
 
 
 The first line in the spreadsheet is handled as the header. The rest of the lines are fetched
-as a list of key, value pairs: [{filed_name: cell_value}, ...]. This way it will be easier to
-automatically construct an INSERT statement for loading each row to postgres.
-
+as a list of key, value pairs:
 
     [{'Ddate': '11/8/2010', 'Activ net': '1,499,538.47'}, {...}, ...]
 
@@ -54,6 +52,7 @@ first to create a stream of records and a second one to handle the cleanup steps
     for records in sheet.get_all_records(empty2zero=False, head=1):
         yield records
     ```
+
 
     ```python
     def transform(records):
