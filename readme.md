@@ -8,6 +8,9 @@ Any extra features should be build on top. There are already great modules for
 pretty much anything you need, there is no point in replacing them. This module
 is supposed to sit on the shoulder of giants not on their toes.
 
+And it is intended to by dead simple.
+
+
 Works with Python 3.
 
 
