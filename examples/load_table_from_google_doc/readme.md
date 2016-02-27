@@ -12,10 +12,9 @@ This folder has three files:
 * a readme file, serving as documentation
 
 
-##### The Google Doc
+### The Google Doc
 
-Name: __BT Obligatiuni__
-Sheet: __bteuroclasic__
+Name: __BT Obligatiuni__ Sheet: __bteuroclasic__
 
 | Date       | Activ net    | Numar investitori | Numar de unitati in circulatie |
 |------------|--------------|-------------------|--------------------------------|
@@ -24,14 +23,15 @@ Sheet: __bteuroclasic__
 | 1/18/2011  | 1,837,112.17 | 52                | 175,180.20                     |
 
 
-##### Extract data using [gspread](https://github.com/burnash/gspread)
+
+#### Extract data using [gspread](https://github.com/burnash/gspread)
 
 Simplest way to do this is by getting all records from the target spreadsheet:
 
     ```python
-    gd = GoogleDoc.open('BT Obligatiuni')
-    sheet = gd.worksheet('bteuroclasic')
-    sheet.get_all_records(empty2zero=False, head=1)
+        gd = GoogleDoc.open('BT Obligatiuni')
+        sheet = gd.worksheet('bteuroclasic')
+        sheet.get_all_records(empty2zero=False, head=1)
     ```
 
 The first line in the spreadsheet is handled as the header. The rest of the lines are fetched
@@ -68,7 +68,7 @@ first to create a stream of records and a second one to handle the cleanup steps
         yield new_row
     ```
 
-##### The PostgreSQL Table
+### The PostgreSQL Table
 
 Loading data to PostgreSQL is handled by the [Table]() object.
 Its .insert(https://github.com/aviDms/eazy_etl/blob/master/postgresql.py) method accepts
